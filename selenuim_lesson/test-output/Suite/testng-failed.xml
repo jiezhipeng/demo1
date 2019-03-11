@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="none">
+  <parameter name="test" value="13979119630"/>
+  <test name="Test(failed)" parallel="methods">
+    <classes>
+      <class name="selenuim_lesson.周测Test">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="f"/>
+        </methods>
+      </class> <!-- selenuim_lesson.周测Test -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
