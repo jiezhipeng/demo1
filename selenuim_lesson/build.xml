@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="selenuim_lesson">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="E:/eclipse/eclipse/"/>
+    <property name="junit.output.dir" value="junit"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.7"/>
+    <property name="source" value="1.7"/>
+    <path id="TestNG.libraryclasspath">
+        <pathelement location="${ECLIPSE_HOME}plugins/org.testng.eclipse_6.9.8.201510130443/lib/testng.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.testng.eclipse_6.9.8.201510130443/lib/jcommander.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.testng.eclipse_6.9.8.201510130443/lib/bsh-2.0b4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.testng.eclipse_6.9.8.201510130443/lib/snakeyaml.jar"/>
+    </path>
+    <path id="selenuim_lesson.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="Tools/selenium-server-standalone-2.53.0.jar"/>
+        <path refid="TestNG.libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="selenuim_lesson.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="baidu">
+        <java classname="baidu.baidu" failonerror="true" fork="yes">
+            <classpath refid="selenuim_lesson.classpath"/>
+        </java>
+    </target>
+    <target name="chaogao">
+        <java classname="selenuim_lesson.chaogao" failonerror="true" fork="yes">
+            <classpath refid="selenuim_lesson.classpath"/>
+        </java>
+    </target>
+    <target name="chrom">
+        <java classname="selenuim_lesson.chrom" failonerror="true" fork="yes">
+            <classpath refid="selenuim_lesson.classpath"/>
+        </java>
+    </target>
+    <target name="chrome">
+        <java classname="selenuim_lesson.chrome" failonerror="true" fork="yes">
+            <classpath refid="selenuim_lesson.classpath"/>
+        </java>
+    </target>
+    <target name="firefox1">
+        <java classname="selenuim_lesson.firefox1" failonerror="true" fork="yes">
+            <classpath refid="selenuim_lesson.classpath"/>
+        </java>
+    </target>
+    <target name="selenuim_lesson">
+        <java classname="selenuim_lesson.selenuim_lesson" failonerror="true" fork="yes">
+            <classpath refid="selenuim_lesson.classpath"/>
+        </java>
+    </target>
+    <target name="业务层">
+        <java classname="selenuim_lesson_2.业务层" failonerror="true" fork="yes">
+            <classpath refid="selenuim_lesson.classpath"/>
+        </java>
+    </target>
+    <target name="作业">
+        <java classname="selenuim_lesson.作业" failonerror="true" fork="yes">
+            <classpath refid="selenuim_lesson.classpath"/>
+        </java>
+    </target>
+    <target name="作业1">
+        <java classname="selenuim_lesson.作业1" failonerror="true" fork="yes">
+            <classpath refid="selenuim_lesson.classpath"/>
+        </java>
+    </target>
+    <target name="作业2 (1)">
+        <java classname="selenuim_lesson.作业2" failonerror="true" fork="yes">
+            <classpath refid="selenuim_lesson.classpath"/>
+        </java>
+    </target>
+    <target name="作业3 (1)">
+        <java classname="selenuim_lesson.作业3" failonerror="true" fork="yes">
+            <classpath refid="selenuim_lesson.classpath"/>
+        </java>
+    </target>
+    <target name="作业4 (1)">
+        <java classname="selenuim_lesson.作业4" failonerror="true" fork="yes">
+            <classpath refid="selenuim_lesson.classpath"/>
+        </java>
+    </target>
+    <target name="作业5 (1)">
+        <java classname="selenuim_lesson.作业5" failonerror="true" fork="yes">
+            <classpath refid="selenuim_lesson.classpath"/>
+        </java>
+    </target>
+    <target name="作业5Test">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="selenuim_lesson.作业5Test" todir="${junit.output.dir}"/>
+            <classpath refid="selenuim_lesson.classpath"/>
+        </junit>
+    </target>
+    <target name="作业5Test.testLogin">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="selenuim_lesson.作业5Test" todir="${junit.output.dir}"/>
+            <classpath refid="selenuim_lesson.classpath"/>
+        </junit>
+    </target>
+    <target name="作业5Test1">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="selenuim_lesson.作业5Test1" todir="${junit.output.dir}"/>
+            <classpath refid="selenuim_lesson.classpath"/>
+        </junit>
+    </target>
+    <target name="作业5Test2">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="selenuim_lesson.作业5Test2" todir="${junit.output.dir}"/>
+            <classpath refid="selenuim_lesson.classpath"/>
+        </junit>
+    </target>
+    <target name="作业5Test2.testDlcg">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="selenuim_lesson.作业5Test2" todir="${junit.output.dir}"/>
+            <classpath refid="selenuim_lesson.classpath"/>
+        </junit>
+    </target>
+    <target name="作业6 (1)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="selenuim_lesson.作业6" todir="${junit.output.dir}"/>
+            <classpath refid="selenuim_lesson.classpath"/>
+        </junit>
+    </target>
+    <target name="分层">
+        <java classname="selenuim_lesson_2.分层" failonerror="true" fork="yes">
+            <classpath refid="selenuim_lesson.classpath"/>
+        </java>
+    </target>
+    <target name="周测">
+        <java classname="selenuim_lesson.周测" failonerror="true" fork="yes">
+            <classpath refid="selenuim_lesson.classpath"/>
+        </java>
+    </target>
+    <target name="多窗口">
+        <java classname="selenuim_lesson.多窗口" failonerror="true" fork="yes">
+            <classpath refid="selenuim_lesson.classpath"/>
+        </java>
+    </target>
+    <target name="寒假作业">
+        <java classname="selenuim_lesson.寒假作业" failonerror="true" fork="yes">
+            <classpath refid="selenuim_lesson.classpath"/>
+        </java>
+    </target>
+    <target name="寒假作业Test (1)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="selenuim_lesson.寒假作业Test" todir="${junit.output.dir}"/>
+            <classpath refid="selenuim_lesson.classpath"/>
+        </junit>
+    </target>
+    <target name="弹框">
+        <java classname="selenuim_lesson.弹框" failonerror="true" fork="yes">
+            <classpath refid="selenuim_lesson.classpath"/>
+        </java>
+    </target>
+    <target name="操作层">
+        <java classname="selenuim_lesson_2.操作层" failonerror="true" fork="yes">
+            <classpath refid="selenuim_lesson.classpath"/>
+        </java>
+    </target>
+    <target name="草稿 (1)">
+        <java classname="selenuim_lesson.草稿" failonerror="true" fork="yes">
+            <classpath refid="selenuim_lesson.classpath"/>
+        </java>
+    </target>
+    <target name="草稿1">
+        <java classname="selenuim_lesson.草稿1" failonerror="true" fork="yes">
+            <classpath refid="selenuim_lesson.classpath"/>
+        </java>
+    </target>
+    <target name="草稿1Test">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="selenuim_lesson.草稿1Test" todir="${junit.output.dir}"/>
+            <classpath refid="selenuim_lesson.classpath"/>
+        </junit>
+    </target>
+    <target name="草稿2">
+        <java classname="selenuim_lesson.草稿2" failonerror="true" fork="yes">
+            <classpath refid="selenuim_lesson.classpath"/>
+        </java>
+    </target>
+    <target name="草稿2Test">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="selenuim_lesson.草稿2Test" todir="${junit.output.dir}"/>
+            <classpath refid="selenuim_lesson.classpath"/>
+        </junit>
+    </target>
+    <target name="鼠标悬停">
+        <java classname="selenuim_lesson.鼠标悬停" failonerror="true" fork="yes">
+            <classpath refid="selenuim_lesson.classpath"/>
+        </java>
+    </target>
+    <target name="baidu1">
+        <java classname="baidu.baidu1" failonerror="true" fork="yes">
+            <classpath refid="selenuim_lesson.classpath"/>
+        </java>
+    </target>
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
+    </target>
+</project>
